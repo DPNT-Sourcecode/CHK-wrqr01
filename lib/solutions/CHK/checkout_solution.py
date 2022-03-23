@@ -19,22 +19,22 @@ def checkout(skus):
     store_the_number=-1
     for item in skus:
         if item=="A":
-            total+=50 * store_the_number
-            discount_tracker["A"]-=1*store_the_number
-            store_the_number=1
-            if discount_tracker["A"]==0: 
-                total-=20
+            total+=50 * store_the_number if store_the_number!=-1 else store_the_number*-30
+            discount_tracker["A"]-=1*store_the_number if store_the_number!=-1 else -1
+            store_the_number=-1
+            if discount_tracker["A"]<=0: 
+                total-=20 * store_the_number//3
                 discount_tracker["A"]=3
         elif item=="B":
-            total+=30 * store_the_number
-            discount_tracker["B"]-=1 * store_the_number
-            store_the_number=1
+            total+=30 * store_the_number if store_the_number!=-1 else store_the_number*-30
+            discount_tracker["B"]-=1 * store_the_number if store_the_number!=-1 else -1
+            store_the_number=-1
             if discount_tracker["B"]==0: 
                 total-=15
                 discount_tracker["B"]=3
         elif item=="C":
-            total+=20 * store_the_number
-            store_the_number=1
+            total+=20 * store_the_number if store_the_number!=-1 else store_the_number*-20
+            store_the_number=-1
         elif item=="D":
             total+=15 * store_the_number if store_the_number!=-1 else store_the_number*-15
             store_the_number=-1
@@ -46,6 +46,7 @@ def checkout(skus):
         else:
             return -1
     return total
+
 
 
 
