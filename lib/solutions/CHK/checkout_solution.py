@@ -17,8 +17,8 @@ class checkout():
         offer_amount=0
         for item in ["S","T","X","Y","Z"]:
             num+=self.item_counts[item]
-        num=num//3
-        offer_amount += num*45
+        num-=num%3
+        offer_amount += (num//3)*45
         
         # loop over from cheapest to most costly for customer to benefit most from offer
         # remove the items from the list so they won't be charged again
@@ -34,7 +34,7 @@ class checkout():
         return offer_amount
 
     def get_total_cost(self, item_counts):
-        price_list={A:50, B:30, C:20, D:15, E:40, F:10, G:20, H:10, I:35, J:60, K:70, L:90, M:15, N:40, O:10, P:50, Q:30, R:50, S:20, T:20, U:40, V:50, W:20, X:17, Y:20, Z:21}
+        price_list={"A":50, "B":30, "C":20, "D":15, "E":40, "F":10, "G":20, "H":10, "I":35, "J":60, "K":70, "L":90, "M":15, "N":40, "O":10, "P":50, "Q":30, "R":50, "S":20, "T":20, "U":40, "V":50, "W":20, "X":17, "Y":20, "Z":21}
         list1=["B", "M", "Q"]
         list2=["E", "N", "R"]
         required_amounts=[2, 3, 3]
@@ -113,6 +113,7 @@ class checkout():
         total+=self.get_total_cost(self.item_counts)
 
         return total
+
 
 
 

@@ -4,6 +4,10 @@ class TestChk():
     def test_chk1(self):
         o=checkout_solution.checkout()
         assert o.checkout("UUUUUUUU") == 240
+    
+    def test_chk2(self):
+        o=checkout_solution.checkout()
+        assert o.checkout("XYZST") == 85
     # def test_chk2(self):
     #     assert checkout_solution.checkout("EE")==80
     # def test_chk3(self):
@@ -49,4 +53,5 @@ class TestChk():
     #     assert checkout_solution.checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH") == 1580
 
     
+
 
