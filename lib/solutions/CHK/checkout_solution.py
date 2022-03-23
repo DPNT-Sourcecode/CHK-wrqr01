@@ -1,6 +1,6 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
-from collections import defaultdict
+from collections import Counter
 
 def apply_discounting(skus):
     number_of_fs=skus.count("F")
@@ -97,4 +97,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
