@@ -48,8 +48,3 @@ class TestChk():
         assert checkout_solution.checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH") == 1580
 
     
-
-
-
-
-
