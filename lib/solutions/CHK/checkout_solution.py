@@ -18,7 +18,7 @@ def checkout(skus):
     discount_tracker["E"]=2
     # handle digits in input by storing them for the next time
     store_the_number=0
-    for i, item in enumerate(skus):
+    for item in skus:
         if store_the_number==3 and item=="A":
             total+=130
             store_the_number=0
@@ -52,8 +52,9 @@ def checkout(skus):
             discount_tracker["E"]-=1
             store_the_number=0
             if discount_tracker["E"]==0: 
-                if 
-                discount_tracker["E"]=2
+                if "B" in skus:   
+                    total-=30
+                    discount_tracker["E"]=2
         elif item.isdigit():
             store_the_number=int(item)
         elif item==" ":
@@ -106,4 +107,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
