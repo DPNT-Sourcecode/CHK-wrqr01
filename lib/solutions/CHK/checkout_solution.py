@@ -36,12 +36,11 @@ def checkout(skus):
             total+=15
         elif item=="3":
             store_the_number=item
-            total+=130
         elif item=="2":
             store_the_number=item
-            total+=45
         elif item==" ":
             continue
         else:
             return -1
     return total
+
