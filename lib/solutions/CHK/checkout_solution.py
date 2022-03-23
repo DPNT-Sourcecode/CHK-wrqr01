@@ -4,7 +4,10 @@ from collections import defaultdict
 # skus = unicode string
 
 
-def apply_discounting(number_of_bs, number_of_es):
+def apply_discounting(skus):
+    number_of_bs = skus.count("B") - skus.count("E")//2
+    discount_bs = ((number_of_bs // 2) * 15) + ((skus.count("E")//2) * 30)
+    return discount_bs
 
 
 def checkout(skus):
@@ -23,15 +26,7 @@ def checkout(skus):
     # handle digits in input by storing them for the next time
     store_the_number=0
     for item in skus:
-        if store_the_number==3 and item=="A":
-            total+=130
-            store_the_number=0
-        elif store_the_number==2 and item=="B":
-            total+=45
-            store_the_number=0
-        elif store_the_number!=0:
-            return -1
-        elif item=="A":
+        if item=="A":
             total+=50
             discount_tracker["A"]-=1
             store_the_number=0
@@ -57,10 +52,7 @@ def checkout(skus):
         else:
             return -1
     
-    number_of_bs = skus.count("B") - skus.count("E")//2
-    discount_bs = ((number_of_bs // 2) * 15) + ((skus.count("E")//2) * 30)
-    print(number_of_bs)
-    total-=discount_bs
+    total-=apply_discounting(skus)
     return total
 
 
@@ -109,5 +101,6 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
