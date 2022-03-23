@@ -5,7 +5,9 @@ from collections import defaultdict
 
 
 def apply_discounting(skus):
+    number_of_free_bs = skus.count("E")//2
     number_of_bs = skus.count("B") - skus.count("E")//2 if skus.count("B")>0 else 0
+    print(number_of_bs)
     if number_of_bs==0:
         return 0 
     else:
@@ -26,8 +28,6 @@ def checkout(skus):
     discount_tracker=defaultdict(int)
     discount_tracker["A"]=5
     #discount_tracker["B"]=2
-    # handle digits in input by storing them for the next time
-    store_the_number=0
     for item in skus:
         if item=="A":
             total+=50
@@ -42,14 +42,10 @@ def checkout(skus):
             total+=30
         elif item=="C":
             total+=20 
-            store_the_number=0
         elif item=="D":
             total+=15
-            store_the_number=0
         elif item=="E":
             total+=40
-        elif item.isdigit():
-            store_the_number=int(item)
         elif item==" ":
             continue
         else:
@@ -104,6 +100,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
