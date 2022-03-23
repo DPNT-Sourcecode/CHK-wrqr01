@@ -23,7 +23,13 @@ class checkout():
         
         # loop over from cheapest to most costly for customer to benefit most from offer
         for item in ["X","S","T","Y","Z"]:
-            self.item
+            if self.item_counts[item] < num:
+                num-=self.item_counts[item]
+                self.item_counts[item]=0
+            else:
+                self.item_count[item]-=num
+                num=0
+                break
 
 
 
@@ -107,6 +113,7 @@ class checkout():
         total=get_total_cost(item_counts)
 
         return total
+
 
 
 
