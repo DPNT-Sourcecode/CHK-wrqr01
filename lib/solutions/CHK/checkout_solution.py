@@ -12,7 +12,7 @@ def apply_discounting(skus):
     if number_of_bs==0:
         return (number_of_fs//3) * 10
     else:
-        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30) + (number_of_fs//2) * 10
+        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30) + (number_of_fs//3) * 10
     
     
 
@@ -103,6 +103,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
