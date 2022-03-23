@@ -5,13 +5,14 @@ from collections import defaultdict
 
 
 def apply_discounting(skus):
+    number_of_fs=skus.count("F")
     number_of_free_bs = skus.count("E")//2
     number_of_bs = skus.count("B")
     
     if number_of_bs==0:
-        return 0
+        return (number_of_fs//2) * 10
     else:
-        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30)
+        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30) + (number_of_fs//2) * 10
     
     
 
@@ -47,6 +48,8 @@ def checkout(skus):
             total+=15
         elif item=="E":
             total+=40
+        elif item=="F":
+            total+=10
         elif item==" ":
             continue
         else:
@@ -100,5 +103,6 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
