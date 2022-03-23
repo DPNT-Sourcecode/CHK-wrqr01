@@ -17,6 +17,8 @@ def get_total_cost(item_counts):
         item_counts[item1]=update_items(item_counts, item1, item2, required_amount)
 
     total_cost=0
+    print(f"the number of Es: {item_counts}")
+
     for item in item_counts.keys():
         if item=="A":
             num_5s=item_counts[item]//5
@@ -134,3 +136,4 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
