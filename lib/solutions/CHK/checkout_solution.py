@@ -2,6 +2,11 @@ from collections import defaultdict
 
 # noinspection PyUnusedLocal
 # skus = unicode string
+
+
+def apply_discounting(number_of_bs, number_of_es):
+
+
 def checkout(skus):
     """
     Input: receives a string representing the items 
@@ -53,10 +58,12 @@ def checkout(skus):
             return -1
     
     number_of_bs = skus.count("B") - skus.count("E")//2
-    discount_bs = (number_of_bs // 2) * 15
+    discount_bs = ((number_of_bs // 2) * 15) + ((skus.count("E")//2) * 30)
     print(number_of_bs)
     total-=discount_bs
     return total
+
+
 
 # def checkout(skus):
 #     """
@@ -102,4 +109,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
