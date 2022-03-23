@@ -32,10 +32,10 @@ def checkout(skus):
             discount_tracker["A"]-=1
             store_the_number=0
             if discount_tracker["A"]==0: 
-                total-=20
+                total-=30
                 discount_tracker["A"]=5
             elif discount_tracker["A"]==2:
-                total-=30
+                total-=20
         elif item=="B":
             total+=30
             discount_tracker["B"]-=1
@@ -109,6 +109,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
