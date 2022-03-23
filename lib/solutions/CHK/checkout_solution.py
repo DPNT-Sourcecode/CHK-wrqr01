@@ -3,7 +3,7 @@
 from collections import Counter
 import string
 
-class checkout():
+class checkoutHelper():
     def __init__(self):
         self.item_counts=None
 
@@ -94,23 +94,23 @@ class checkout():
         return total_cost
 
 
-    def checkout(self, skus):
-        """
-        Input: receives a string representing the items 
-        Output: need to return the price of the items, if illegal input need to output -1
-        Note: haven't been told the exact form of the input i.e are there spaces etc?
-        also havn't been told if an empty string is an illegal input or not?
-        also has't been mentioned if the multi items will always come in together as nX or not.
-        """
-        total=0
-        allowed=set(string.ascii_uppercase)
-        for char in skus:
-            if char not in allowed:
-                return -1
+def checkout(skus):
+    """
+    Input: receives a string representing the items 
+    Output: need to return the price of the items, if illegal input need to output -1
+    Note: haven't been told the exact form of the input i.e are there spaces etc?
+    also havn't been told if an empty string is an illegal input or not?
+    also has't been mentioned if the multi items will always come in together as nX or not.
+    """
+    total=0
+    allowed=set(string.ascii_uppercase)
+    for char in skus:
+        if char not in allowed:
+            return -1
 
-        self.item_counts=Counter(skus)
-        total+=self.group_discount_offer()
-        total+=self.get_total_cost(self.item_counts)
+    helper=checkoutHelper()
+    helper.item_counts=Counter(skus)
+    total+=helper.group_discount_offer()
+    total+=helper.get_total_cost(helper.item_counts)
 
-        return total
-
+    return total
