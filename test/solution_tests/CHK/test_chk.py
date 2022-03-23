@@ -1,6 +1,8 @@
 from solutions.CHK import checkout_solution
 
 class TestChk():
+    def test_chk12(self):
+        assert checkout_solution.checkout("XYZXYZXYZS") == 45*3 + 17
     # def test_chk1(self):
     #     o=checkout_solution.checkout()
     #     assert o.checkout("UUUUUUUU") == 240
@@ -46,9 +48,7 @@ class TestChk():
     #     o=checkout_solution.checkout()
     #     assert o.checkout("UUUU") == 120
 
-    # def test_chk12(self):
-    #     o=checkout_solution.checkout()
-    #     assert o.checkout("XYZXYZXYZS") == 45*3 + 17
+    
     # # def test_chk12(self):
     # #     o=checkout_solution.checkout()
     # #     assert o.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
@@ -70,3 +70,4 @@ class TestChk():
     #     assert o.checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKQVH") == 1580
 
     
+
