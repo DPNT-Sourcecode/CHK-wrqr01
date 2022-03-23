@@ -13,9 +13,11 @@ def apply_discounting(skus):
     else:
         return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30) + (number_of_fs//3) * 10
     
-    
+def get_total_cost(items_counts):
+    price_list={"A":50,"B":30,"C":20,"D":15,"E":40,"F":10,"G":20,"H":10,"I":35,"J":60,"K":80,"L":90,"M":15,"N":40,"O":10,"P":50,"Q":30,"R":50,"S":30,"T":20,"U":40,"V":50,"W":20,"X":90,"Y":10,"Z":50}
 
-#def get_
+    total_cost=0
+    total_cost
 
 
 def checkout(skus):
@@ -32,12 +34,11 @@ def checkout(skus):
         if char not in allowed:
             return -1
 
-    items_and_counts=Counter(skus)
-    print(items_and_counts)
+    items_counts=Counter(skus)
+    total=get_total_cost(items_counts)
 
-    total=get_prices(items_and_counts)
 
-    
+
 
     total-=apply_discounting(skus)
     return total
