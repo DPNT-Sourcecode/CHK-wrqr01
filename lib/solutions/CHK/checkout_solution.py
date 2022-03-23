@@ -17,5 +17,17 @@ def checkout(skus):
     for item in skus:
         if item=="A":
             total+=50
+            discount_tracker["A"]-=1
+            if discount_tracker["A"]==0: 
+                total-=20
+                discount_tracker["A"]=3
+        if item=="B":
+            total+=30
+            discount_tracker["B"]-=1
+            if discount_tracker["B"]==0: 
+                total-=15
+                discount_tracker["B"]=3
+
+
 
 
