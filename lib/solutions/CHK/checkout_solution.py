@@ -13,8 +13,9 @@ def checkout(skus):
     total=0
     # keep track of the number discountable of items with a dictionary 
     discount_tracker=defaultdict(int)
-    discount_tracker["A"]=3
+    discount_tracker["A"]=5
     discount_tracker["B"]=2
+    discount_tracker["E"]=
     # handle digits in input by storing them for the next time
     store_the_number=0
     for item in skus:
@@ -98,10 +99,3 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
-
-
-
-
-
-
-
