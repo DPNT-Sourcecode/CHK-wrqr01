@@ -26,7 +26,13 @@ def checkout(skus):
     """
     total=0
     allowed=set(string.ascii_uppercase)
-    
+    for char in skus:
+        if char not in allowed:
+            return -1
+
+    items_and_counts=Counter(skus)
+    total=get_prices(items_and_counts)
+
     total-=apply_discounting(skus)
     return total
 
@@ -75,4 +81,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
