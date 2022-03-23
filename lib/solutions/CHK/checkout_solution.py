@@ -6,13 +6,12 @@ from collections import defaultdict
 
 def apply_discounting(skus):
     number_of_free_bs = skus.count("E")//2
-    print(number_of_free_bs)
     number_of_bs = skus.count("B")
-    print(number_of_bs)
+    
     if number_of_bs==0:
         return 0
     else:
-        return ((number_of_bs // 2) * 15) + (number_of_free_bs * 30)
+        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30)
     
     
 
@@ -101,4 +100,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
