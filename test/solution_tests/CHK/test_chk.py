@@ -18,5 +18,9 @@ class TestChk():
     
     def test_chk(self):
         assert checkout_solution.checkout("RRQR") == 150
+    
+    def test_chk(self):
+        assert checkout_solution.checkout("F") == 10
+
 
 
