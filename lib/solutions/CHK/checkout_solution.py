@@ -27,7 +27,7 @@ class checkout():
                 num-=self.item_counts[item]
                 self.item_counts[item]=0
             else:
-                self.item_count[item]-=num
+                self.item_counts[item]-=num
                 num=0
                 break
 
@@ -39,7 +39,7 @@ class checkout():
         list2=["E", "N", "R"]
         required_amounts=[2, 3, 3]
         for item1, item2, required_amount in zip(list1, list2, required_amounts):
-            item_counts[item1]=update_items(item_counts, item1, item2, required_amount)
+            item_counts[item1]=self.update_items(item_counts, item1, item2, required_amount)
 
         total_cost=0
         print(f"the number of Es: {item_counts}")
@@ -110,9 +110,10 @@ class checkout():
 
         self.item_counts=Counter(skus)
         total+=self.group_discount_offer()
-        total+=self.get_total_cost(item_counts)
+        total+=self.get_total_cost(self.item_counts)
 
         return total
+
 
 
 
