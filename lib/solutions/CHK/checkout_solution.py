@@ -4,16 +4,22 @@ from collections import Counter
 import string
 
 class checkout():
+    def __init__(self):
+        self.item_counts=None
+
 
     def update_items(self, item_counts, item1, item2, required_amount):
-        """remove any items the customer is getting for free from the items_count dictionary"""
+        """remove any items the customer is getting for free from the item_count dictionary"""
         num_free_item1s = item_counts[item2]//required_amount
         return item_counts[item1] - num_free_item1s if num_free_item1s < item_counts[item1] else 0
-    def group_discount_offer(self, item_counts):
+
+    def group_discount_offer(selfs):
         num=0
+        offer_amount=0
         for item in ["S","T","X","Y","Z"]:
-            num+=item_counts[item]
-        if num > 3:
+            num+=self.item_counts[item]
+
+
 
     def get_total_cost(self, item_counts):
         price_list={A:50, B:30, C:20, D:15, E:40, F:10, G:20, H:10, I:35, J:60, K:70, L:90, M:15, N:40, O:10, P:50, Q:30, R:50, S:20, T:20, U:40, V:50, W:20, X:17, Y:20, Z:21}
@@ -90,8 +96,9 @@ class checkout():
             if char not in allowed:
                 return -1
 
-        item_counts=Counter(skus)
+        self.item_counts=Counter(skus)
         total=get_total_cost(item_counts)
 
         return total
+
 
