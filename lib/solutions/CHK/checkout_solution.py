@@ -18,6 +18,13 @@ class checkout():
         offer_amount=0
         for item in ["S","T","X","Y","Z"]:
             num+=self.item_counts[item]
+        num=num//3
+        offer_amount += num*45
+        
+        # loop over from cheapest to most costly for customer to benefit most from offer
+        for item in ["X","S","T","Y","Z"]:
+            self.item
+
 
 
 
@@ -100,5 +107,6 @@ class checkout():
         total=get_total_cost(item_counts)
 
         return total
+
 
 
