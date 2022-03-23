@@ -30,6 +30,10 @@ def get_total_cost(item_counts):
             num_1s=item_counts[item]%2
             total_cost+= num_2s * 45 + num_1s * price_list[item]
         
+        if item=="F":
+            total_cost+=(number_of_fs//3) * 10
+
+
         if item=="H":
             num_10s=item_counts[item]//10
             num_5s=(item_counts[item]%10)//5
@@ -45,6 +49,18 @@ def get_total_cost(item_counts):
             num_5s=item_counts[item]//5
             num_1s=item_counts[item]%5
             total_cost+= num_5s * 200 + num_1s * price_list[item]
+        
+        if item=="Q":
+            num_3s=item_counts[item]//3
+            num_1s=item_counts[item]%2
+            total_cost+= num_3s * 80 + num_1s * price_list[item]
+        
+        if item=="V":
+            num_3s=(item_counts[item]%5)//3
+            num_2s=item_counts[item]//2
+            num_1s=item_counts[item] - (num_3s*5 + num_2s*3)
+            total_cost+= num_3s * 130 + num_2s * 90 + num_1s * price_list[item]
+        
 
     return total_cost
 
@@ -113,6 +129,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
