@@ -15,6 +15,8 @@ def apply_discounting(skus):
     
     
 
+def get_
+
 
 def checkout(skus):
     """
@@ -31,7 +33,10 @@ def checkout(skus):
             return -1
 
     items_and_counts=Counter(skus)
+    print(items_and_counts)
     total=get_prices(items_and_counts)
+
+    
 
     total-=apply_discounting(skus)
     return total
@@ -81,5 +86,3 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
-
-
