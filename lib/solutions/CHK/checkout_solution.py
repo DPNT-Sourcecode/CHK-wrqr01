@@ -54,7 +54,7 @@ def checkout(skus):
             discount_tracker["E"]-=1
             store_the_number=0
             if discount_tracker["E"]==0: 
-                if "B" in skus:   
+                if skus.count("B")>0:  
                     total-=30
                     discount_tracker["E"]=2
         elif item.isdigit():
@@ -109,6 +109,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
