@@ -28,11 +28,14 @@ class TestChk():
     def test_chk(self):
         assert checkout_solution.checkout("UUUU") == 120
     
+    def test_chk(self):
+        assert checkout_solution.checkout("UUUUUUUU") == 240
     
     def test_chk(self):
         assert checkout_solution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
     
     
+
 
 
 
