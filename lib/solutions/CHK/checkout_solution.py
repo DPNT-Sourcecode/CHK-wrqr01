@@ -5,7 +5,7 @@ from collections import defaultdict
 
 
 def apply_discounting(skus):
-    number_of_bs = skus.count("B") - skus.count("E")//2 
+    number_of_bs = skus.count("B") - skus.count("E")//2 if skus.count("B")>0 else 0
     if number_of_bs==0:
         return 0 
     else:
@@ -104,6 +104,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
