@@ -6,7 +6,7 @@ import string
 def update_items(item_counts, item1, item2, required_amount):
     """remove any items the customer is getting for free from the items_count dictionary"""
     num_free_item1s = item_counts[item2]//required_amount
-    return item_counts[item1] - num_free_item1s
+    return item_counts[item1] - num_free_item1s if num_free_item1s < item_counts[item1] else 0
     
 def get_total_cost(item_counts):
     price_list={"A":50,"B":30,"C":20,"D":15,"E":40,"F":10,"G":20,"H":10,"I":35,"J":60,"K":80,"L":90,"M":15,"N":40,"O":10,"P":50,"Q":30,"R":50,"S":30,"T":20,"U":40,"V":50,"W":20,"X":90,"Y":10,"Z":50}
@@ -136,4 +136,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
