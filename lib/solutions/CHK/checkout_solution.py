@@ -11,6 +11,7 @@ def checkout(skus):
     also has't been mentioned if the multi items will always come in together as nX or not.
     """
     total=0
+    # keep track of the number discountable of items with a dictionary 
     discount_tracker=defaultdict(int)
     discount_tracker["A"]=3
     discount_tracker["B"]=2
@@ -21,12 +22,25 @@ def checkout(skus):
             if discount_tracker["A"]==0: 
                 total-=20
                 discount_tracker["A"]=3
-        if item=="B":
+        elif item=="B":
             total+=30
             discount_tracker["B"]-=1
             if discount_tracker["B"]==0: 
                 total-=15
                 discount_tracker["B"]=3
+        elif item=="C":
+            total+=20
+        elif item=="D":
+            total+=15
+        elif item=="3A":
+            total+=130
+        elif item=="2B":
+            total+=45
+        elif item==" ":
+            continue
+        else:
+            return -1
+    return total
 
 
 
