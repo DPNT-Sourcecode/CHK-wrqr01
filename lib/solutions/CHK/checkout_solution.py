@@ -20,9 +20,16 @@ def get_total_cost(item_counts):
     for item in item_counts.keys():
         if item=="A":
             num_5s=item_counts[item]//5
-            num_3s=(items_counts[item]%5)//3
+            num_3s=(item_counts[item]%5)//3
             num_1s=item_counts[item] - (num_5s*5 + num_3s*3)
             total_cost+= num_5s * 200 + num_3s * 130 + num_1s * price_list[item]
+
+        if item=="B":
+            # need to change this to make it work for E
+            num_2s=item_counts[item]//2
+            num_1s=item_counts[item]%2
+            total_cost+= num_2s * 45 + num_1s * price_list[item]
+        
     return total_cost
 
 
@@ -43,10 +50,6 @@ def checkout(skus):
     item_counts=Counter(skus)
     total=get_total_cost(item_counts)
 
-
-
-
-    total-=apply_discounting(skus)
     return total
 
 
@@ -94,6 +97,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
