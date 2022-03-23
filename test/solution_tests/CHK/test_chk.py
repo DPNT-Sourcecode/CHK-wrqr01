@@ -43,8 +43,12 @@ class TestChk():
     
     def test_chk15(self):
         assert checkout_solution.checkout("VVVV") == 180
+    
+    def test_ch16(self):
+        assert checkout_solution.checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH") == 1580
 
     
+
 
 
 
