@@ -3,10 +3,9 @@
 from collections import Counter
 import string
 
-def apply_discounting(skus):
-    number_of_fs=skus.count("F")
-    number_of_free_bs = skus.count("E")//2
-    number_of_bs = skus.count("B")
+def get_free_other_item(item_counts, item1, item2, required_amount):
+    number_of_free_bs = item_counts[item1]//required_amount
+    number_of_bs = item_counts[item2]
     
     if number_of_bs==0:
         return (number_of_fs//3) * 10
@@ -31,7 +30,7 @@ def get_total_cost(item_counts):
             total_cost+= num_2s * 45 + num_1s * price_list[item]
         
         if item=="F":
-            total_cost+=(number_of_fs//3) * 10
+            total_cost+=(item_counts[item]//3) * 10
 
 
         if item=="H":
@@ -129,6 +128,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
