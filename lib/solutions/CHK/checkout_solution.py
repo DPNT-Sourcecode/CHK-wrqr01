@@ -16,31 +16,32 @@ def checkout(skus):
     discount_tracker["A"]=3
     discount_tracker["B"]=2
     # handle digits in input by storing them for the next time
-    store_the_number=1
+    store_the_number=0
     for item in skus:
+        if store_the_number
         if item=="A":
             total+=50
             discount_tracker["A"]-=1
-            store_the_number=1
+            store_the_number=0
             if discount_tracker["A"]==0: 
                 total-=20
                 discount_tracker["A"]=3
         elif item=="B":
             total+=30
-            discount_tracker["B"]-=1 * store_the_number if store_the_number!=-1 else -1
-            store_the_number=-1
+            discount_tracker["B"]-=1
+            store_the_number=0
             if discount_tracker["B"]==0: 
                 total-=15
                 discount_tracker["B"]=2
         elif item=="C":
-            total+=20 * store_the_number if store_the_number!=-1 else store_the_number*-20
-            store_the_number=-1
+            total+=20 
+            store_the_number=0
         elif item=="D":
-            total+=15 * store_the_number if store_the_number!=-1 else store_the_number*-15
-            store_the_number=-1
+            total+=15
+            store_the_number=0
         elif item.isdigit():
             # handle numbers that have more than one digit
-            store_the_number=int(item) if store_the_number==-1 else int(str(store_the_number) + item)
+            store_the_number=item
         elif item==" ":
             continue
         else:
@@ -91,6 +92,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
