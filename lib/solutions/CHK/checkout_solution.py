@@ -113,10 +113,3 @@ class checkout():
         total+=self.get_total_cost(self.item_counts)
 
         return total
-
-
-
-
-
-
-
