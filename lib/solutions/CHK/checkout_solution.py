@@ -17,9 +17,13 @@ def get_total_cost(item_counts):
     price_list={"A":50,"B":30,"C":20,"D":15,"E":40,"F":10,"G":20,"H":10,"I":35,"J":60,"K":80,"L":90,"M":15,"N":40,"O":10,"P":50,"Q":30,"R":50,"S":30,"T":20,"U":40,"V":50,"W":20,"X":90,"Y":10,"Z":50}
 
     total_cost=0
-    for item in item_counts:
+    for item in item_counts.keys():
         if item=="A":
-            total_cost+=item
+            num_5s=item_counts[item]//5
+            num_3s=(items_counts[item]%5)//3
+            num_1s=item_counts[item] - (num_5s*5 + num_3s*3)
+            total_cost+= num_5s * 200 + num_3s * 130 + num_1s * price_list[item]
+    return total_cost
 
 
 def checkout(skus):
@@ -90,5 +94,6 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
