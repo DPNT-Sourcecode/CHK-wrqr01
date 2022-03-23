@@ -1,6 +1,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 from collections import Counter
+import string
 
 def apply_discounting(skus):
     number_of_fs=skus.count("F")
@@ -24,30 +25,7 @@ def checkout(skus):
     also has't been mentioned if the multi items will always come in together as nX or not.
     """
     total=0
-    number_of_letters=defaultdict(int)
-    for item in skus:
-        if item=="A":
-            total+=50
-            number_of_letters["A"]+=1
-        elif item=="B":
-            total+=30
-            number_of_letters["B"]+=1
-        elif item=="C":
-            total+=20 
-            number_of_letters["C"]+=1
-        elif item=="D":
-            total+=15
-            number_of_letters["D"]+=1
-        elif item=="E":
-            total+=40
-            number_of_letters["E"]+=1
-        elif item=="F":
-            total+=10
-            number_of_letters["F"]+=1
-        elif item==" ":
-            continue
-        else:
-            return -1
+    allowed=set(string.ascii_uppercase)
     
     total-=apply_discounting(skus)
     return total
@@ -97,3 +75,4 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
