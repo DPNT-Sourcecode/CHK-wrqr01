@@ -30,7 +30,7 @@ def get_total_cost(item_counts):
             total_cost+= num_2s * 45 + num_1s * price_list[item]
         
         elif item=="F":
-            total_cost+=(item_counts[item]//3)*10 + (item_counts[item]%3)*10
+            total_cost+=(item_counts[item]//3)*price_list[item] + (item_counts[item]%3)*price_list[item]
 
         elif item=="H":
             num_10s=item_counts[item]//10
@@ -54,7 +54,7 @@ def get_total_cost(item_counts):
             total_cost+= num_3s * 80 + num_1s * price_list[item]
         
         elif item=="U":
-            total_cost+= (item_counts[item]//4) * price_list[item]
+            total_cost+=(item_counts[item]//4)*price_list[item] + (item_counts[item]%3)*price_list[item]
 
         elif item=="V":
             num_3s=(item_counts[item]%5)//3
@@ -131,6 +131,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
