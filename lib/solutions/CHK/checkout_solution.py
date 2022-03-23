@@ -16,7 +16,7 @@ def checkout(skus):
     discount_tracker["A"]=5
     discount_tracker["B"]=2
     # handle free B's
-    number_of_free_bs=skus.count("E")//2
+    number_of_free_bs=skus.count("E")//2 - 1 if skus.count("E")>2 else 0
     # handle digits in input by storing them for the next time
     store_the_number=0
     for item in skus:
@@ -60,7 +60,7 @@ def checkout(skus):
         else:
             return -1
     
-    total-=(30 + 45*number_of_free_bs) if number_of_free_bs%2==0
+    total-=(30 + 45*number_of_free_bs) if number_of_free_bs%2!=0 else 45*number_of_free_bs
     return total
 
 # def checkout(skus):
@@ -107,6 +107,7 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
 
 
