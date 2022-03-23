@@ -10,13 +10,11 @@ def update_items(item_counts, item1, item2, required_amount):
     
 def get_total_cost(item_counts):
     price_list={"A":50,"B":30,"C":20,"D":15,"E":40,"F":10,"G":20,"H":10,"I":35,"J":60,"K":80,"L":90,"M":15,"N":40,"O":10,"P":50,"Q":30,"R":50,"S":30,"T":20,"U":40,"V":50,"W":20,"X":90,"Y":10,"Z":50}
-    list1=["B"]
-    list2=["E"]
-    required_amounts=[2]
+    list1=["B", "M", "Q"]
+    list2=["E", "N", "R"]
+    required_amounts=[2, 3, 3]
     for item1, item2, required_amount in zip(list1, list2, required_amounts):
         item_counts[item1]=update_items(item_counts, item1, item2, required_amount)
-
-
 
     total_cost=0
     for item in item_counts.keys():
@@ -55,6 +53,9 @@ def get_total_cost(item_counts):
             num_1s=item_counts[item]%2
             total_cost+= num_3s * 80 + num_1s * price_list[item]
         
+        if item=="U":
+            total_cost+= (item_counts[item]//4) * price_list[item]
+            
         if item=="V":
             num_3s=(item_counts[item]%5)//3
             num_2s=item_counts[item]//2
@@ -129,4 +130,5 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
+
 
