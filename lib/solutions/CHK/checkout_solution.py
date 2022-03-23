@@ -3,14 +3,10 @@
 from collections import Counter
 import string
 
-def get_free_other_item(item_counts, item1, item2, required_amount):
-    number_of_free_bs = item_counts[item1]//required_amount
-    number_of_bs = item_counts[item2]
-    
-    if number_of_bs==0:
-        return (number_of_fs//3) * 10
-    else:
-        return (((number_of_bs - number_of_free_bs) // 2) * 15) + (number_of_free_bs * 30) + (number_of_fs//3) * 10
+def get_free_other_item(item_counts, item1, item2, required_amount, price_list):
+    num_free_item2s = item_counts[item1]//required_amount
+
+    return 
     
 def get_total_cost(item_counts):
     price_list={"A":50,"B":30,"C":20,"D":15,"E":40,"F":10,"G":20,"H":10,"I":35,"J":60,"K":80,"L":90,"M":15,"N":40,"O":10,"P":50,"Q":30,"R":50,"S":30,"T":20,"U":40,"V":50,"W":20,"X":90,"Y":10,"Z":50}
@@ -128,10 +124,3 @@ def checkout(skus):
 #         else:
 #             return -1
 #     return total
-
-
-
-
-
-
-
