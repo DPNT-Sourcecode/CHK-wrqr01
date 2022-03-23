@@ -8,5 +8,15 @@ class TestChk():
         assert checkout_solution.checkout("AAAAAAAABB") == 375
     
     def test_chk(self):
-        assert checkout_solution.checkout("EEB") == 360
+        assert checkout_solution.checkout("EEB") == 80
+    
+    def test_chk(self):
+        assert checkout_solution.checkout("EEEEBB") == 160
+
+    def test_chk(self):
+        assert checkout_solution.checkout("O") == 10
+    
+    def test_chk(self):
+        assert checkout_solution.checkout("RRQR") == 150
+
 
